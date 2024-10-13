@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To-Do List</title>
+      <link rel="stylesheet" href="index.css" />
+      <script type="module" src="index.js"></script>
+   </head>
+   <body>
+      <main>
+         <section class="container">
+            <h1>To-Do List</h1>
+            <section class="add-new-task">
+               <input
+                  type="text"
+                  placeholder="Task to be done..."
+                  maxlength="60"
+               />
+               <button class="btn-primary" type="button">Add</button>
+            </section>
+            <nav class="categories">
+               <input type="button" id="all" class="all target" value="All" />
+               <input type="button" class="pending" value="Pending" />
+               <input type="button" class="completed" value="Completed" />
+            </nav>
+
+            <dialog id="delete-modal" class="modal">
+               <section class="content-modal">
+                  <img src="assets/delete-modal.svg" alt="delete modal icon" />
+                  <section class="text-modal">
+                     <h3>Are you sure?</h3>
+                     <p>
+                        This action can not be undone, your data will be lost
+                     </p>
+                  </section>
+                  <section class="buttons-modal">
+                     <input
+                        class="btn-primary"
+                        type="button"
+                        value="Yes, Delete!"
+                     />
+                     <input
+                        class="btn-secondary"
+                        type="button"
+                        value="No, Keep it"
+                        onclick="deleteModal.close()"
+                     />
+                  </section>
+               </section>
+            </dialog>
+
+            <dialog id="edit-modal" class="modal">
+               <section class="content-modal">
+                  <img src="assets/edit-modal.svg" alt="edit modal icon" />
+                  <section class="text-modal">
+                     <h3>Edit Task</h3>
+                     <textarea
+                        id="edit-textarea"
+                        maxlength="60"
+                        rows="3"
+                     ></textarea>
+                  </section>
+                  <section class="buttons-modal">
+                     <input
+                        class="btn-primary"
+                        type="button"
+                        value="Save changes"
+                     />
+                     <input
+                        class="btn-secondary"
+                        type="button"
+                        value="Cancel"
+                        onclick="editModal.close()"
+                     />
+                  </section>
+               </section>
+            </dialog>
+
+            <section class="registros">
+               <div class="item">
+                  <p class="content">
+                     <input type="checkbox" name="done" value="1" />Parrafo
+                     chevere
+                  </p>
+                  <div class="button-container">
+                     <button
+                        id="edit modal"
+                        class="btn-primary"
+                        type="button"
+                        onclick="editModal.showModal()"
+                     >
+                        <img src="assets/edit.svg" alt="edit button" />
+                     </button>
+                     <button
+                        id="delete modal"
+                        class="btn-primary"
+                        type="button"
+                        onclick="deleteModal.showModal()"
+                     >
+                        <img src="assets/delete.svg" alt="delete button" />
+                     </button>
+                  </div>
+               </div>
+               <div class="item">
+                  <p class="content">
+                     <input type="checkbox" name="done" value="1" />Parrafo
+                     chevere
+                  </p>
+                  <div class="button-container">
+                     <button class="btn-primary" type="button">
+                        <img src="assets/edit.svg" alt="edit button" />
+                     </button>
+                     <button class="btn-primary" type="button">
+                        <img src="assets/delete.svg" alt="delete button" />
+                     </button>
+                  </div>
+               </div>
+               <div class="item">
+                  <p class="content">
+                     <input type="checkbox" name="done" value="1" />Parrafo
+                     chevere
+                  </p>
+                  <div class="button-container">
+                     <button class="btn-primary" type="button">
+                        <img src="assets/edit.svg" alt="edit button" />
+                     </button>
+                     <button class="btn-primary" type="button">
+                        <img src="assets/delete.svg" alt="delete button" />
+                     </button>
+                  </div>
+               </div>
+               <div class="item">
+                  <p class="content">
+                     <input type="checkbox" name="done" value="1" />Parrafo
+                     chevere
+                  </p>
+                  <div class="button-container">
+                     <button class="btn-primary" type="button">
+                        <img src="assets/edit.svg" alt="edit button" />
+                     </button>
+                     <button class="btn-primary" type="button">
+                        <img src="assets/delete.svg" alt="delete button" />
+                     </button>
+                  </div>
+               </div>
+               <div class="item">
+                  <p class="content">
+                     <input type="checkbox" name="done" value="1" />Parrafo
+                     chevere
+                  </p>
+                  <div class="button-container">
+                     <button class="btn-primary" type="button">
+                        <img src="assets/edit.svg" alt="edit button" />
+                     </button>
+                     <button class="btn-primary" type="button">
+                        <img src="assets/delete.svg" alt="delete button" />
+                     </button>
+                  </div>
+               </div>
+               <!-- <div class="empty">
+                  <span>Your task list is empty</span>
+                  <img src="assets/inbox.svg" alt="empty task list" />
+               </div> -->
+            </section>
+         </section>
+      </main>
+      <script>
+         const deleteModal = document.querySelector("#delete-modal");
+         const editModal = document.querySelector("#edit-modal");
+      </script>
+   </body>
+</html>
